@@ -59,7 +59,8 @@ public class App {
 				}
 			} else if (operation == 3) {
 				// TODO cluster compute and user input
-				data.findClusters(2);
+				// TODO when findCluster is 2 indexOutOfBonds
+				data.findClusters(10);
 				//data.printAllClusters();
 			} else if (operation == 4) {
 				System.exit(0);
