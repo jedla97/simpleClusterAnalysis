@@ -21,6 +21,9 @@ public class Cluster {
 		cell.setIDofCluster(this.IDofCluster);
 	}
 
+	public void removeCell(Cell cell) {
+		cells.remove(cell);
+	}
 	public void printAllCells() {
 		for (int i = 0; i < cells.size(); i++) {
 			System.out.println(cells.get(i).toString());
@@ -53,7 +56,7 @@ public class Cluster {
 			}
 		}
 		double[] ret = {nearestCell, idOfCell};
-		System.out.println(ret[0] + " " + ret[1]);
+		//System.out.println(ret[0] + " " + ret[1]);
 		return ret;
 	}
 

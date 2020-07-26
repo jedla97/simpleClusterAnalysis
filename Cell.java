@@ -4,17 +4,21 @@ public class Cell {
 	private int positionX;
 	private int positionY;
 	private int IDofCluster;
+	private static int counter = 1;
+	private int id;
 	
 	public Cell(int positionX, int positionY) {
 		super();
 		this.positionX = positionX;
 		this.positionY = positionY;
+		this.id = counter;
+		counter++;
 	}
 
 	
 	@Override
 	public String toString() {
-		return "positionX=" + positionX + ", positionY=" + positionY + ", cluster=" + IDofCluster;
+		return "ID = " + id + "	||||| positionX=" + positionX + ", positionY=" + positionY + ", cluster=" + IDofCluster;
 	}
 
 	

@@ -12,7 +12,11 @@ public class ClusterDatabase {
 	public void addClusterToDatabase(Cluster cluster) {
 		clusters.add(cluster);
 	}
-
+	
+	public void removeClusterFromDatabase(int id) {
+		clusters.remove(id);
+	}
+	
 	public void printAllClusters() {
 		for (int i = 0; i < clusters.size(); i++) {
 			clusters.get(i).printAllCells();
@@ -22,8 +26,8 @@ public class ClusterDatabase {
 	public void findClusters(int numberOfClusters) {
 		if (numberOfClusters < clusters.size()) {
 			double minDistance = Integer.MAX_VALUE;
-			int idIfCluster;
-			int idOfMergedCluster;
+			int idIfCluster = 0;
+			int idOfMergedCluster = 0;
 			double[] help;
 			while (clusters.size() > numberOfClusters) {
 				for (int i = 0; i < clusters.size(); i++) {
@@ -34,7 +38,9 @@ public class ClusterDatabase {
 						idIfCluster = i;
 					}
 				}
+				this.mergeClusters(idIfCluster, idOfMergedCluster);
 			}
+			this.printAllClusters();
 		}
 		else if(numberOfClusters == clusters.size()) {
 			this.printAllClusters();
@@ -45,6 +51,12 @@ public class ClusterDatabase {
 	}
 	
 	public void mergeClusters(int idOfCluster1, int idOfCluster2) {
+		Cluster c = clusters.get(idOfCluster1);
+		for (int i = 0; i < clusters.get(idOfCluster2).getCells().size(); i++) {
+			c.addCell(clusters.get(idOfCluster2).getCells().get(i));
+			clusters.get(idOfCluster2).removeCell(clusters.get(idOfCluster2).getCells().get(i));			
+		}
+		this.removeClusterFromDatabase(idOfCluster2);
 		
 	}
 	
