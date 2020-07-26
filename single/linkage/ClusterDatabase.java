@@ -25,11 +25,12 @@ public class ClusterDatabase {
 
 	public void findClusters(int numberOfClusters) {
 		if (numberOfClusters < clusters.size()) {
-			double minDistance = Integer.MAX_VALUE;
+			double minDistance = Double.MAX_VALUE;
 			int idIfCluster = 0;
 			int idOfMergedCluster = 0;
 			double[] help;
 			while (clusters.size() > numberOfClusters) {
+				minDistance = Double.MAX_VALUE;
 				for (int i = 0; i < clusters.size(); i++) {
 					help = clusters.get(i).nearestSingeCluster(clusters, i);
 					if(help[0]< minDistance) {
@@ -38,6 +39,7 @@ public class ClusterDatabase {
 						idIfCluster = i;
 					}
 				}
+				System.out.println(minDistance);
 				this.mergeClusters(idIfCluster, idOfMergedCluster);
 			}
 			this.printAllClusters();
