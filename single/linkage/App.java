@@ -19,6 +19,8 @@ public class App {
 		int x;
 		int y;
 		ClusterDatabase data = null;
+		//ClusterDatabase cdb = new ClusterDatabase();
+		/**
 		Cluster c = new Cluster();
 		Cluster c2 = new Cluster();
 		Cluster c3 = new Cluster();
@@ -28,7 +30,6 @@ public class App {
 		c.addCell(cell1);
 		c3.addCell(cell2);
 		c2.addCell(cell3);
-		ClusterDatabase cdb = new ClusterDatabase();
 		cdb.addClusterToDatabase(c);
 		cdb.addClusterToDatabase(c2);
 		cdb.addClusterToDatabase(c3);
@@ -36,6 +37,7 @@ public class App {
 		System.out.println(c.euclideanDistance(10, 10, 8, 8));
 		System.out.println(c.euclideanDistance(8, 8, 10, 10));
 		cdb.findClusters(2);
+		**/
 		while (true) {
 			System.out.println(
 					"input number 1 for add cell, 2 for load cells from file or number 3 for compute clusters "
@@ -57,7 +59,7 @@ public class App {
 				}
 			} else if (operation == 3) {
 				// TODO cluster compute and user input
-				cdb.findClusters(3);
+				data.findClusters(2);
 				//data.printAllClusters();
 			} else if (operation == 4) {
 				System.exit(0);
