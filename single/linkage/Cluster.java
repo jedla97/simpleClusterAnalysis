@@ -45,7 +45,7 @@ public class Cluster {
 				if (j != ownId) {
 					for (int k = 0; k < arr.get(j).getCells().size(); k++) {
 						x2 = arr.get(j).getCells().get(k).getPositionX();
-						y2 = arr.get(j).getCells().get(k).getPositionX();
+						y2 = arr.get(j).getCells().get(k).getPositionY();
 						helpForEuclid = this.euclideanDistance(x1, y1, x2, y2);
 						if (helpForEuclid < nearestCell) {
 							nearestCell = helpForEuclid;
