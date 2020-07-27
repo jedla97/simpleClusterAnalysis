@@ -16,7 +16,7 @@ public class ClusterDatabase {
 	public void removeClusterFromDatabase(int id) {
 		clusters.remove(id);
 	}
-	
+	//12345
 	public void printAllClusters() {
 		for (int i = 0; i < clusters.size(); i++) {
 			clusters.get(i).printAllCells();
@@ -54,11 +54,12 @@ public class ClusterDatabase {
 	
 	public void mergeClusters(int idOfCluster1, int idOfCluster2) {
 		Cluster c = clusters.get(idOfCluster1);
-		for (int i = 0; i < clusters.get(idOfCluster2).getCells().size(); i++) {
-			c.addCell(clusters.get(idOfCluster2).getCells().get(i));
-			clusters.get(idOfCluster2).removeCell(clusters.get(idOfCluster2).getCells().get(i));			
+		while(clusters.get(idOfCluster2).getCells().isEmpty() == false) {
+			c.addCell(clusters.get(idOfCluster2).getCells().get(0));
+			clusters.get(idOfCluster2).removeCell(clusters.get(idOfCluster2).getCells().get(0));			
 		}
 		this.removeClusterFromDatabase(idOfCluster2);
+		System.out.println();
 		
 	}
 	

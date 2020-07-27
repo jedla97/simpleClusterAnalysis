@@ -58,6 +58,7 @@ public class App {
 				}
 			} else if (operation == 3) {
 				// TODO cluster compute and user input
+				System.out.println("Input how many clusters you want");
 				int numberOfClusters = a.numberInput(1, Integer.MAX_VALUE);
 				data.findClusters(numberOfClusters);
 				//data.printAllClusters();
@@ -97,7 +98,7 @@ public class App {
 		}
 		return false;
 	}
-
+//1234 678 
 	// data loader from file
 	public ClusterDatabase loadFromFile() throws IOException {
 
