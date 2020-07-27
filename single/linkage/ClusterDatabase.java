@@ -39,7 +39,7 @@ public class ClusterDatabase {
 						idIfCluster = i;
 					}
 				}
-				System.out.println(minDistance);
+				//System.out.println(minDistance);
 				this.mergeClusters(idIfCluster, idOfMergedCluster);
 			}
 			this.printAllClusters();

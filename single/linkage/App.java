@@ -54,13 +54,12 @@ public class App {
 				try {
 					data = a.loadFromFile();
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			} else if (operation == 3) {
 				// TODO cluster compute and user input
-				// TODO when findCluster is 2 indexOutOfBonds
-				data.findClusters(10);
+				int numberOfClusters = a.numberInput(1, Integer.MAX_VALUE);
+				data.findClusters(numberOfClusters);
 				//data.printAllClusters();
 			} else if (operation == 4) {
 				System.exit(0);
